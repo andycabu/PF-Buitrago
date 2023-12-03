@@ -1,0 +1,303 @@
+[
+  {
+    "category": "backpack",
+    "title": "Explorer Pro - Urban Trek Backpack, Compatible with 17-inch Laptops",
+    "description": "Experience the blend of functionality and style with this versatile backpack. ideal for both urban commutes and adventurous trails. It features a secure compartment for laptops up to 17 inches, multiple pockets for your essentials, and ergonomic shoulder straps for maximum comfort.",
+    "id": 1,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/backpack-1.png?alt=media&token=d9e3434c-e33e-44fa-87d4-6d138074aca6",
+    "price": 129.99,
+    "rating": {
+      "count": 95,
+      "rate": 4.2
+    }
+  },
+  {
+    "category": "backpack",
+    "title": "Adventure Mate - Compact City Backpack, Suitable for 13-inch Laptops",
+    "description": "Crafted for the modern-day explorer, this backpack is your go-to for daily adventures. It fits a 13-inch laptop in its padded sleeve and offers ample storage with its innovative pocket system. The water-resistant material keeps your belongings safe, making it ideal for all weather conditions.",
+    "id": 2,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/backpack-2.png?alt=media&token=3a355929-7634-4174-a344-c9f45d1635b6",
+    "price": 99.99,
+    "rating": {
+      "count": 150,
+      "rate": 4.5
+    }
+  },
+
+  {
+    "category": "backpack",
+    "title": "Tech Traveler - Smart Backpack with USB Charging, Fits 15.6-inch Laptops",
+    "description": "Perfect for the tech-savvy traveler, this backpack offers a dedicated compartment for a 15.6-inch laptop, integrated USB charging port, and RFid-blocking pockets. Its ergonomic design ensures comfort during long commutes, while the sleek, water-repellent fabric makes it a stylish accessory.",
+    "id": 3,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/backpack-3.png?alt=media&token=b1bd1321-b62f-4c65-9f51-9a16ae93dc19",
+    "price": 139.99,
+    "rating": {
+      "count": 110,
+      "rate": 4.4
+    }
+  },
+  {
+    "category": "backpack",
+    "title": "Outdoor Adventurer - Rugged Roll-Top Backpack, 14-inch Laptop Compatible",
+    "description": "Designed for the outdoor enthusiast, this rugged backpack features a roll-top closure for adjustable capacity, waterproof material, and a built-in whistle for safety. It comfortably fits a 14-inch laptop, and its breathable back panel ensures comfort during hikes and outdoor activities.",
+    "id": 4,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/backpack-4.png?alt=media&token=4ac54e93-4989-42bb-99aa-3b69d81f20e8",
+    "price": 119.99,
+    "rating": {
+      "count": 85,
+      "rate": 4.7
+    }
+  },
+  {
+    "category": "backpack",
+    "title": "City Commuter - Slim Waterproof Backpack, Fits 13 Laptops",
+    "description": "A compact and lightweight backpack, perfect for daily commuting and short trips. The backpack is made from high-quality, waterproof fabric, ensuring the contents stay dry. It features a main compartment with a laptop sleeve for up to 13-inch laptops, a front zippered pocket for small items, and adjustable padded shoulder straps for comfort. The design is minimalist and sleek, available in various colors to suit different styles.",
+    "id": 5,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/backpack-5.png?alt=media&token=a8c2c88b-0798-40a0-82c4-b19b1bafbd82",
+    "price": 89.95,
+    "rating": {
+      "count": 60,
+      "rate": 4.5
+    }
+  },
+  {
+    "category": "jewelery",
+    "title": "Elegant Diamond Necklace",
+    "description": "A luxurious diamond necklace, perfect for special occasions, featuring an exquisite and elegant design.",
+    "id": 6,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/jewelery-1.png?alt=media&token=ddcc9878-b6c7-409b-9805-3868ab6f78a3",
+    "price": 1200,
+    "rating": {
+      "count": 150,
+      "rate": 4.8
+    }
+  },
+  {
+    "category": "jewelery",
+    "title": "Vintage Gold Ring with Ruby",
+    "description": "A vintage-style gold ring, featuring an intricate design and a prominent central ruby. ideal for lovers of classic jewelry.",
+    "id": 7,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/jewelery-2.png?alt=media&token=833b7c15-9606-4fd5-bdf3-7d8aa8cbdfef",
+    "price": 850,
+    "rating": {
+      "count": 120,
+      "rate": 4.5
+    }
+  },
+  {
+    "category": "jewelery",
+    "title": "Minimalist Silver Earrings",
+    "description": "Modern, minimalist silver earrings, a perfect complement to any outfit.",
+    "id": 8,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/jewelery-3.png?alt=media&token=88b85ac0-6a63-4e36-a1e4-7844914ff331",
+    "price": 300,
+    "rating": {
+      "count": 200,
+      "rate": 4.7
+    }
+  },
+  {
+    "category": "jewelery",
+    "title": "Delicate Pearl and Sapphire Bracelet",
+    "description": "An elegant bracelet made with pearls and small sapphires, perfect for adding a touch of sophistication to your style.",
+    "id": 9,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/jewelery-4.png?alt=media&token=d32bd828-71f3-488a-ae33-4b32d0e026da",
+    "price": 550,
+    "rating": {
+      "count": 180,
+      "rate": 4.6
+    }
+  },
+  {
+    "category": "jewelery",
+    "title": "Artistic Brooch with Emerald",
+    "description": "A unique and artistic brooch, featuring a central emerald surrounded by smaller gemstones. A standout piece for your collection.",
+    "id": 10,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/jewelery-5.png?alt=media&token=48082673-a57d-4ea6-9812-13230d5a6774",
+    "price": 950,
+    "rating": {
+      "count": 140,
+      "rate": 4.9
+    }
+  },
+  {
+    "category": "electronics",
+    "title": "AlphaSmart VR Headset",
+    "description": "A cutting-edge VR headset with 4K display, immersive audio, and advanced motion tracking.",
+    "id": 11,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/electronics-1.png?alt=media&token=69895126-e821-48f5-b696-3c0312575da4",
+    "price": 1200,
+    "rating": {
+      "count": 200,
+      "rate": 4.8
+    }
+  },
+  {
+    "category": "electronics",
+    "title": "EchoBeat Wireless Earbuds",
+    "description": "Wireless earbuds with active noise cancellation, quick charging, and Bluetooth 5.2 connectivity.",
+    "id": 12,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/electronics-2.png?alt=media&token=8d1baf5a-19c0-4f19-a042-0a1bfcb78169",
+    "price": 250,
+    "rating": {
+      "count": 180,
+      "rate": 4.7
+    }
+  },
+  {
+    "category": "electronics",
+    "title": "SolarSync Smartwatch",
+    "description": "A solar-powered smartwatch with health and fitness tracking, and water resistance up to 50 meters.",
+    "id": 13,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/electronics-3.png?alt=media&token=57d3a2f7-ad64-4ada-8d71-59bc7a2a2660",
+    "price": 500,
+    "rating": {
+      "count": 220,
+      "rate": 4.6
+    }
+  },
+  {
+    "category": "electronics",
+    "title": "PixelPro Drone 4K",
+    "description": "Drone with 4K camera, advanced stabilization, remote control, and 30 minutes of flight autonomy.",
+    "id": 14,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/electronics-4.png?alt=media&token=66262417-d1c9-4f36-9bc6-670be66d7eef",
+    "price": 800,
+    "rating": {
+      "count": 150,
+      "rate": 4.8
+    }
+  },
+  {
+    "category": "electronics",
+    "title": "ThunderCharge Portable Power Bank",
+    "description": "High-capacity portable battery with fast charging, USB-C ports, and impact resistance.",
+    "id": 15,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/electronics-5.png?alt=media&token=38030c59-cd4a-4531-9c64-a3a994776da6",
+    "price": 100,
+    "rating": {
+      "count": 300,
+      "rate": 4.7
+    }
+  },
+  {
+    "category": "men's clothing",
+    "title": "ClassicFit Wool Suit",
+    "description": "Elegant and classic wool suit, perfect for business or formal events. Tailored fit with high-quality fabric.",
+    "id": 16,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/men's%20Clothing-1.png?alt=media&token=5ff0417a-f742-4a2b-bff1-a39e1bb6511c",
+    "price": 450,
+    "rating": {
+      "count": 85,
+      "rate": 4.5
+    }
+  },
+  {
+    "category": "men's clothing",
+    "title": "UrbanStyle Leather Jacket",
+    "description": "Genuine leather jacket with an urban and modern design. Perfect for a casual or night-time look.",
+    "id": 17,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/men's%20Clothing-2.png?alt=media&token=e18ec1f5-4277-4b06-96d6-d0edf3d47a85",
+    "price": 300,
+    "rating": {
+      "count": 120,
+      "rate": 4.7
+    }
+  },
+  {
+    "category": "men's clothing",
+    "title": "TechWear Cargo Pants",
+    "description": "Water-resistant techwear cargo pants with multiple pockets. Ideal for outdoor adventures or urban use.",
+    "id": 18,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/men's%20Clothing-3.png?alt=media&token=68dfeaaa-bfaa-445d-bb8e-3c0a1e7a6240",
+    "price": 200,
+    "rating": {
+      "count": 140,
+      "rate": 4.6
+    }
+  },
+  {
+    "category": "men's clothing",
+    "title": "SmartCasual Polo Shirt",
+    "description": "Soft and breathable cotton polo shirt with an elegant and casual look. Perfect for any occasion.",
+    "id": 19,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/men's%20Clothing-4.png?alt=media&token=e8e00291-6c03-41c6-add8-4801f922e12b",
+    "price": 80,
+    "rating": {
+      "count": 200,
+      "rate": 4.8
+    }
+  },
+  {
+    "category": "men's clothing",
+    "title": "HighPerformance Running Shoes",
+    "description": "High-performance running shoes with cushioning technology and support. Lightweight and aerodynamic design for maximum comfort.",
+    "id": 20,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/men's%20Clothing-5.png?alt=media&token=bb07c061-69f4-47ac-9bc9-4bc99320267c",
+    "price": 150,
+    "rating": {
+      "count": 180,
+      "rate": 4.9
+    }
+  },
+  {
+    "category": "women's clothing",
+    "title": "ElegantSilk Evening Dress",
+    "description": "Elegant silk evening dress with a sophisticated cut and delicate details. Perfect for formal events.",
+    "id": 21,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/Women's%20Clothing-1.png?alt=media&token=be6efcd9-affe-4aff-8438-2955c8b4a5b4",
+    "price": 350,
+    "rating": {
+      "count": 90,
+      "rate": 4.8
+    }
+  },
+  {
+    "category": "women's clothing",
+    "title": "ChicLeather Handbag",
+    "description": "Chic and versatile leather handbag, spacious enough for daily use or special occasions.",
+    "id": 22,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/Women's%20Clothing-2.png?alt=media&token=a6966aac-9332-47e9-98d5-b4f2dac6e061",
+    "price": 250,
+    "rating": {
+      "count": 110,
+      "rate": 4.7
+    }
+  },
+  {
+    "category": "women's clothing",
+    "title": "TrendyDenim Jacket",
+    "description": "Fashionable and trendy denim jacket, with a distressed design and contemporary details.",
+    "id": 23,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/Women's%20Clothing-3.png?alt=media&token=46a74012-4ade-467f-8ce2-953a9704f352",
+    "price": 150,
+    "rating": {
+      "count": 130,
+      "rate": 4.6
+    }
+  },
+  {
+    "category": "women's clothing",
+    "title": "CasualCotton Blouse",
+    "description": "Casual, lightweight, and breathable cotton blouse with a fresh and feminine design. Ideal for everyday wear.",
+    "id": 24,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/Women's%20Clothing-4.png?alt=media&token=3a87aa2e-c42f-42d7-ad27-dd6faa6b01db",
+    "price": 80,
+    "rating": {
+      "count": 160,
+      "rate": 4.7
+    }
+  },
+  {
+    "category": "women's clothing",
+    "title": "SportyChic Sneakers",
+    "description": "Sporty chic sneakers with a modern and comfortable design. Suitable for exercise or an active lifestyle.",
+    "id": 25,
+    "image": "https://firebasestorage.googleapis.com/v0/b/store-f6bf5.appspot.com/o/Women's%20Clothing-5.png?alt=media&token=110c5618-deab-45e4-a2ac-37f94c32a964",
+    "price": 120,
+    "rating": {
+      "count": 150,
+      "rate": 4.8
+    }
+  }
+]

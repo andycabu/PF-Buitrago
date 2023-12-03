@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Inici",
+    "about_us": "Sobre Nosaltres",
+    "contact": "Contacte",
+    "register_product": "Registrar Producte",
+    "help": "Necessites ajuda? 999 999 999 o Whatsapp 666 666 666 de dilluns a divendres de 09:00 a 18:00 o envia un mail a info@andycabustore.com i estarem encantats d'ajudar-te.",
+    "categories": "Categories"
+  },
+  "dropdown": {
+    "electronics": "Electrònica",
+    "jewelery": "Joies",
+    "men's_clothing": "Roba d'home",
+    "women's_clothing": "Roba de dona",
+    "backpack": "Motxilla"
+  },
+  "shopping": {
+    "cart": "No hi ha productes al carretó",
+    "remove_from_cart": "Retirar del carro",
+    "add_to_cart": "Afegeix al carro"
+  },
+  "filters": {
+    "search": "Cerca",
+    "products": "No s'han trobat productes",
+    "price": "Preu a partir de:"
+  },
+  "form": {
+    "upload": "Pujar imatge",
+    "drag_or_drop": "Arrastrar o soltar"
+  },
+  "login_or_register": {
+    "email": "Correu electrònic",
+    "password": "Contrasenya",
+    "welcome": "Benvingut",
+    "back": "de nou",
+    "account_false": "No tens un compte?",
+    "account_true": "Ja teniu un compte amb nosaltres?",
+    "sign_up": "Registra't",
+    "sign_in": "Inicia sessió",
+    "login": "iniciar sessió",
+    "register": "Registra't",
+    "with": "amb"
+  }
+}

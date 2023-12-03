@@ -1,0 +1,384 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #18181b;
+  --text-color: #a1a1aa;
+  --text-color-hover: #c8c8d6;
+  --card-background-color: #202024;
+  --card-border-color: rgba(255, 255, 255, 0.1);
+  --card-box-shadow-1: rgba(0, 0, 0, 0.05);
+  --card-box-shadow-1-y: 3px;
+  --card-box-shadow-1-blur: 6px;
+  --card-box-shadow-2: rgba(0, 0, 0, 0.1);
+  --card-box-shadow-2-y: 8px;
+  --card-box-shadow-2-blur: 15px;
+  --card-label-color: #ffffff;
+  --card-icon-color: #d4d4d8;
+  --card-icon-background-color: rgba(255, 255, 255, 0.08);
+  --card-icon-border-color: rgba(255, 255, 255, 0.12);
+  --card-shine-opacity: 0.1;
+  --card-shine-gradient: conic-gradient(
+    from 205deg at 50% 50%,
+    rgba(16, 185, 129, 0) 0deg,
+    #10b981 25deg,
+    rgba(52, 211, 153, 0.18) 295deg,
+    rgba(16, 185, 129, 0) 360deg
+  );
+  --card-line-color: #2a2b2c;
+  --card-tile-color: rgba(16, 185, 129, 0.05);
+  --card-hover-border-color: rgba(255, 255, 255, 0.2);
+  --card-hover-box-shadow-1: rgba(0, 0, 0, 0.04);
+  --card-hover-box-shadow-1-y: 5px;
+  --card-hover-box-shadow-1-blur: 10px;
+  --card-hover-box-shadow-2: rgba(0, 0, 0, 0.3);
+  --card-hover-box-shadow-2-y: 15px;
+  --card-hover-box-shadow-2-blur: 25px;
+  --card-hover-icon-color: #34d399;
+  --card-hover-icon-background-color: rgba(52, 211, 153, 0.1);
+  --card-hover-icon-border-color: rgba(52, 211, 153, 0.2);
+  --blur-opacity: 0.01;
+}
+
+:root.light {
+  --text-color: #52525b;
+  --text-color-hover: #222225;
+  --background-color: #faf6f6;
+  --card-background-color: #ffffff;
+  --card-border-color: rgba(24, 24, 27, 0.08);
+  --card-box-shadow-1: rgba(24, 24, 27, 0.02);
+  --card-box-shadow-1-y: 3px;
+  --card-box-shadow-1-blur: 6px;
+  --card-box-shadow-2: rgba(24, 24, 27, 0.04);
+  --card-box-shadow-2-y: 2px;
+  --card-box-shadow-2-blur: 7px;
+  --card-label-color: #18181b;
+  --card-icon-color: #18181b;
+  --card-icon-background-color: rgba(24, 24, 27, 0.04);
+  --card-icon-border-color: rgba(24, 24, 27, 0.1);
+  --card-shine-opacity: 0.3;
+  --card-shine-gradient: conic-gradient(
+    from 225deg at 50% 50%,
+    rgba(16, 185, 129, 0) 0deg,
+    #10b981 25deg,
+    #edfaf6 285deg,
+    #ffffff 345deg,
+    rgba(16, 185, 129, 0) 360deg
+  );
+  --card-line-color: #e9e9e7;
+  --card-tile-color: rgba(16, 185, 129, 0.08);
+  --card-hover-border-color: rgba(24, 24, 27, 0.15);
+  --card-hover-box-shadow-1: rgba(24, 24, 27, 0.05);
+  --card-hover-box-shadow-1-y: 3px;
+  --card-hover-box-shadow-1-blur: 6px;
+  --card-hover-box-shadow-2: rgba(24, 24, 27, 0.1);
+  --card-hover-box-shadow-2-y: 8px;
+  --card-hover-box-shadow-2-blur: 15px;
+  --card-hover-icon-color: #18181b;
+  --card-hover-icon-background-color: rgba(24, 24, 27, 0.04);
+  --card-hover-icon-border-color: rgba(24, 24, 27, 0.34);
+  --blur-opacity: 0.1;
+}
+body {
+  min-height: 100vh;
+  color: var(--text-color);
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  margin: auto;
+  max-width: 1500px;
+  transition: all;
+  transition-duration: 500ms;
+}
+
+@layer utilities {
+  .box-shadow-1 {
+    box-shadow: 0px var(--card-box-shadow-1-y) var(--card-box-shadow-1-blur)
+        var(--card-box-shadow-1),
+      0px var(--card-box-shadow-2-y) var(--card-box-shadow-2-blur)
+        var(--card-box-shadow-2),
+      0 0 0 1px var(--card-border-color);
+  }
+}
+
+.day-night {
+  cursor: pointer;
+  right: 10px;
+  top: 10px;
+  opacity: 1;
+}
+.day-night input {
+  display: none;
+}
+.day-night input + div {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  box-shadow: inset 8px -8px 0 0 var(--text-color);
+  transform: scale(1) rotate(-2deg);
+  transition: box-shadow 0.5s ease 0s, transform 0.4s ease 0.1s;
+}
+.day-night input + div:before {
+  content: "";
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: background-color 0.3s ease;
+}
+.day-night input + div:after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin: -3px 0 0 -3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 -23px 0 var(--text-color), 0 23px 0 var(--text-color),
+    23px 0 0 var(--text-color), -23px 0 0 var(--text-color),
+    15px 15px 0 var(--text-color), -15px 15px 0 var(--text-color),
+    15px -15px 0 var(--text-color), -15px -15px 0 var(--text-color);
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+.day-night input:checked + div {
+  box-shadow: inset 20px -20px 0 0 var(--text-color);
+  transform: scale(0.5) rotate(0deg);
+  transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
+}
+.day-night input:checked + div:before {
+  background: var(--text-color);
+  transition: background-color 0.3s ease 0.1s;
+}
+.day-night input:checked + div:after {
+  transform: scale(1);
+  transition: transform 0.5s ease 0.15s;
+}
+svg {
+  cursor: pointer;
+  overflow: visible;
+  width: 60px;
+}
+svg #heart {
+  transform-origin: center;
+  animation: animateHeartOut 0.3s linear forwards;
+}
+svg #main-circ {
+  transform-origin: 29.5px 29.5px;
+}
+
+#checkbox {
+  display: none;
+}
+
+#checkbox:checked + label svg #heart {
+  transform: scale(0.2);
+  fill: #e2264d;
+  animation: animateHeart 0.3s linear forwards 0.25s;
+}
+#checkbox:checked + label svg #main-circ {
+  transition: all 2s;
+  animation: animateCircle 0.3s linear forwards;
+  opacity: 1;
+}
+#checkbox:checked + label svg #grp1 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+#checkbox:checked + label svg #grp1 #oval1 {
+  transform: scale(0) translate(0, -30px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp1 #oval2 {
+  transform: scale(0) translate(10px, -50px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp2 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+#checkbox:checked + label svg #grp2 #oval1 {
+  transform: scale(0) translate(30px, -15px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp2 #oval2 {
+  transform: scale(0) translate(60px, -15px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp3 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+#checkbox:checked + label svg #grp3 #oval1 {
+  transform: scale(0) translate(30px, 0px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp3 #oval2 {
+  transform: scale(0) translate(60px, 10px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp4 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+#checkbox:checked + label svg #grp4 #oval1 {
+  transform: scale(0) translate(30px, 15px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp4 #oval2 {
+  transform: scale(0) translate(40px, 50px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp5 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+#checkbox:checked + label svg #grp5 #oval1 {
+  transform: scale(0) translate(-10px, 20px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp5 #oval2 {
+  transform: scale(0) translate(-60px, 30px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp6 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+#checkbox:checked + label svg #grp6 #oval1 {
+  transform: scale(0) translate(-30px, 0px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp6 #oval2 {
+  transform: scale(0) translate(-60px, -5px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp7 {
+  opacity: 1;
+  transition: 0.1s all 0.3s;
+}
+#checkbox:checked + label svg #grp7 #oval1 {
+  transform: scale(0) translate(-30px, -15px);
+  transform-origin: 0 0 0;
+  transition: 0.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp7 #oval2 {
+  transform: scale(0) translate(-55px, -30px);
+  transform-origin: 0 0 0;
+  transition: 1.5s transform 0.3s;
+}
+#checkbox:checked + label svg #grp2 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+#checkbox:checked + label svg #grp3 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+#checkbox:checked + label svg #grp4 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+#checkbox:checked + label svg #grp5 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+#checkbox:checked + label svg #grp6 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+#checkbox:checked + label svg #grp7 {
+  opacity: 1;
+  transition: 0.1s opacity 0.3s;
+}
+
+
+
+.dropdown-menu::before {
+  @apply content-[""] absolute -top-[10px] left-[38%] translate-x-1/2 max-md:hidden;
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent; 
+  border-bottom: 10px solid var(--background-color); 
+}
+
+@keyframes animateCircle {
+  40% {
+    transform: scale(10);
+    opacity: 1;
+    fill: #dd4688;
+  }
+  55% {
+    transform: scale(11);
+    opacity: 1;
+    fill: #d46abf;
+  }
+  65% {
+    transform: scale(12);
+    opacity: 1;
+    fill: #cc8ef5;
+  }
+  75% {
+    transform: scale(13);
+    opacity: 1;
+    fill: transparent;
+    stroke: #cc8ef5;
+    stroke-width: 0.5;
+  }
+  85% {
+    transform: scale(17);
+    opacity: 1;
+    fill: transparent;
+    stroke: #cc8ef5;
+    stroke-width: 0.2;
+  }
+  95% {
+    transform: scale(18);
+    opacity: 1;
+    fill: transparent;
+    stroke: #cc8ef5;
+    stroke-width: 0.1;
+  }
+  100% {
+    transform: scale(19);
+    opacity: 1;
+    fill: transparent;
+    stroke: #cc8ef5;
+    stroke-width: 0;
+  }
+}
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animateHeartOut {
+  0% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

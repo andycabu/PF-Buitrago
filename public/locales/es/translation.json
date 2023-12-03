@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about_us": "Acerca de Nosotros",
+    "contact": "Contacto",
+    "register_product": "Registrar Producto",
+    "help": "¿Necesitas ayuda? 999 999 999 o Whatsapp 666 666 666 de lunes a viernes de 09:00 a 18:00 o envia un mail a info@andycabustore.com y estaremos encantados de ayudarte.",
+    "categories": "Categorias"
+  },
+  "dropdown": {
+    "electronics": "Electrónica",
+    "jewelery": "Joyería",
+    "men's_clothing": "Ropa de hombre",
+    "women's_clothing": "Ropa de mujer",
+    "backpack": "Mochila"
+  },
+  "shopping": {
+    "cart": "No hay productos en el carrito",
+    "remove_from_cart": "Quitar del carrito",
+    "add_to_cart": "Añadir al carrito"
+  },
+  "filters": {
+    "search": "Buscar",
+    "products": "No se encontraron productos",
+    "price": "Precio desde:"
+  },
+  "form": {
+    "upload": "Subir imagen",
+    "drag_or_drop": "Arrastrar o soltar"
+  },
+  "login_or_register": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "welcome": "Bienvenido",
+    "back": "de nuevo",
+    "account_false": "¿No tienes una cuenta?",
+    "account_true": "¿Ya tienes una cuenta con nosotros?",
+    "sign_up": "Resgistrarse",
+    "sign_in": "Iniciar sesión",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "with": "con"
+  }
+}
