@@ -1,25 +1,20 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
-import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD2mClbfwSthrwhC1nY8j_GeYh7GKVVQOU",
-  authDomain: "store-f6bf5.firebaseapp.com",
-  databaseURL:
-    "https://store-f6bf5-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "store-f6bf5",
-  storageBucket: "store-f6bf5.appspot.com",
-  messagingSenderId: "643780603087",
-  appId: "1:643780603087:web:39b263d9655e80f27ddbba",
-  measurementId: "G-ZWGPQE8WEE",
+  apiKey: "AIzaSyB2y2eu8rcGp1WA04xacmkzyExOHmmZDuU",
+  authDomain: "store-af491.firebaseapp.com",
+  projectId: "store-af491",
+  storageBucket: "store-af491.appspot.com",
+  messagingSenderId: "336840225480",
+  appId: "1:336840225480:web:762e4924e8a2d2076c6bfd",
 };
 
 const app = initializeApp(firebaseConfig);
 
-const database = getDatabase(app);
-const storage = getStorage(app);
+const db = getFirestore(app);
 
 const auth = getAuth(app);
 
-export { database, storage, auth };
+export { db, auth };

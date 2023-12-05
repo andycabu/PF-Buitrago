@@ -30,12 +30,12 @@ function LoginOrRegisterPage() {
     user && navigate("/");
   }, [user]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (route) {
-      loginUser(newUser);
+      await loginUser(newUser);
     } else {
-      registerUser(newUser);
+      await registerUser(newUser);
     }
   };
 

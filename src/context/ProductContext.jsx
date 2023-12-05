@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { database } from "../../db/firebase";
-import { ref, onValue } from "firebase/database";
+import { db } from "../../db/firebase";
+import { collection, onSnapshot } from "firebase/firestore";
 
 export const ProductContext = createContext();
 
@@ -19,15 +19,22 @@ export const ProductProvider = ({ children }) => {
   const updateToLocalStorage = (state) => {
     window.localStorage.setItem("favorites", JSON.stringify(state));
   };
-  const getProducts = () => {
-    const productsRef = ref(database, "/products");
-    onValue(productsRef, (snapshot) => {
-      const data = snapshot.val();
-      const productsArray = data
-        ? Object.entries(data).map(([key, value]) => ({ id: key, ...value }))
-        : [];
-      setProducts(productsArray);
-    });
+  const getProducts = async () => {
+    const productosRef = collection(db, "products");
+
+    onSnapshot(
+      productosRef,
+      (querySnapshot) => {
+        const productosArray = [];
+        querySnapshot.forEach((doc) => {
+          productosArray.push({ id: doc.id, ...doc.data() });
+        });
+        setProducts(productosArray);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   };
 
   const addToFavorite = (product) => {

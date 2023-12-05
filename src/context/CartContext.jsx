@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { database } from "../../db/firebase.js";
-import { ref as databaseRef, push } from "firebase/database";
+import { db } from "../../db/firebase.js";
+import { collection, addDoc } from "firebase/firestore";
 
 export const CartContext = createContext();
 
@@ -94,7 +94,7 @@ export const CartProvider = ({ children }) => {
 
     return tempQuantities[productId] || 0;
   };
-  const payCart = (user, cart) => {
+  const payCart = async (user, cart) => {
     const simplifiedCart = cart.map((item) => ({
       id: item.id,
       image: item.image,
@@ -103,17 +103,14 @@ export const CartProvider = ({ children }) => {
       title: item.title,
     }));
 
-    const results = push(databaseRef(database, `/orders`), {
-      customer: {
-        name: user.displayName,
-        email: user.email,
-      },
-      cart: simplifiedCart,
-    });
-
-    const orderId = results.key;
-    clearCart();
-    setBuys({ orderId, cartDetails: cart });
+    try {
+      const docRef = await addDoc(collection(db, "/orders"), simplifiedCart);
+      const orderId = docRef.id;
+      clearCart();
+      setBuys({ orderId, cartDetails: cart });
+    } catch (e) {
+      console.error("Error al realizar la compra: ", e);
+    }
   };
 
   useEffect(() => {

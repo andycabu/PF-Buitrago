@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { auth, database } from "../../db/firebase";
+import { auth } from "../../db/firebase";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -9,52 +9,27 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { ref, onValue } from "firebase/database";
 
 export const UsersContext = createContext();
 
 export const UsersProvider = ({ children }) => {
   const [user, setUser] = useState();
-  const [authorizedUsers, setAuthorizedUsers] = useState();
-  const [isAuthorized, setIsAuthorized] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const registerUser = ({ email, password }) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed up
-        const user = userCredential.user;
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(error);
-      });
-  };
-
-  const fetchAuthorizedUsers = async () => {
-    const authUsersRef = ref(database, "/authorizedUsers");
-    onValue(
-      authUsersRef,
-      (snapshot) => {
-        const authorizedUsers = snapshot.val();
-        setAuthorizedUsers(authorizedUsers);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  };
-  useEffect(() => {
-    fetchAuthorizedUsers();
-  }, []);
-
-  useEffect(() => {
-    if (user !== undefined && authorizedUsers !== undefined) {
-      setIsAuthorized(!!(user && authorizedUsers[user.uid]));
-      setIsLoading(false);
+  const registerUser = async ({ email, password }) => {
+    console.log(email, password);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      // El usuario se ha registrado con éxito
+      // userCredential.user contendrá información sobre el usuario recién creado
+      console.log("Usuario registrado:", userCredential.user);
+    } catch (error) {
+      console.error("Error al registrar el usuario:", error.message);
+      // Aquí puedes manejar los errores, como mostrar un mensaje al usuario
     }
-  }, [user, authorizedUsers]);
+  };
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
@@ -97,10 +72,6 @@ export const UsersProvider = ({ children }) => {
         loginUser,
         signInWithGoogle,
         handleSignOut,
-        fetchAuthorizedUsers,
-        authorizedUsers,
-        isAuthorized,
-        isLoading,
       }}
     >
       {children}
