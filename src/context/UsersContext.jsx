@@ -18,20 +18,18 @@ export const UsersProvider = ({ children }) => {
   const [authorizedUsers, setAuthorizedUsers] = useState();
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
-  // Función para registrar un nuevo usuario
-  const registerUser = async ({ email, password }) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      // Usuario registrado con éxito, userCredential.user contiene la información del usuario
-      setUser(userCredential);
-    } catch (error) {
-      console.error("Error al registrar el usuario:", error);
-    }
+  const registerUser = ({ email, password }) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(error);
+      });
   };
 
   const fetchAuthorizedUsers = async () => {
@@ -65,7 +63,6 @@ export const UsersProvider = ({ children }) => {
     setUser(user);
   };
 
-  // Función para iniciar sesión
   const loginUser = async ({ email, password }) => {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -73,7 +70,6 @@ export const UsersProvider = ({ children }) => {
         email,
         password
       );
-      // Usuario inició sesión con éxito, userCredential.user contiene la información del usuario
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
     }
@@ -84,15 +80,12 @@ export const UsersProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        // Usuario está conectado
         setUser(currentUser);
       } else {
-        // Usuario no está conectado
         setUser(null);
       }
     });
 
-    // Desuscribirse del observador cuando el componente se desmonte
     return () => unsubscribe();
   }, []);
 

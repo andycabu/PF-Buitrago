@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { database } from "../../db/firebase.js";
+import { ref as databaseRef, push } from "firebase/database";
 
 export const CartContext = createContext();
 
@@ -13,6 +15,7 @@ export const CartProvider = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [cartCount, setCartCount] = useState(0);
   const [tempQuantities, setTempQuantities] = useState({});
+  const [buys, setBuys] = useState();
 
   function addToCart(product) {
     const productInCartIndex = cart.findIndex((item) => item.id === product.id);
@@ -91,6 +94,27 @@ export const CartProvider = ({ children }) => {
 
     return tempQuantities[productId] || 0;
   };
+  const payCart = (user, cart) => {
+    const simplifiedCart = cart.map((item) => ({
+      id: item.id,
+      image: item.image,
+      price: item.price,
+      quantity: item.quantity,
+      title: item.title,
+    }));
+
+    const results = push(databaseRef(database, `/orders`), {
+      customer: {
+        name: user.displayName,
+        email: user.email,
+      },
+      cart: simplifiedCart,
+    });
+
+    const orderId = results.key;
+    clearCart();
+    setBuys({ orderId, cartDetails: cart });
+  };
 
   useEffect(() => {
     const calculateTotalItems = (items) => {
@@ -119,12 +143,14 @@ export const CartProvider = ({ children }) => {
         tempQuantities,
         totalPrice,
         cartCount,
+        buys,
         addToCart,
         removeFromCart,
         checkProductInCart,
         clearCart,
         updateProductQuantity,
         getQuantity,
+        payCart,
       }}
     >
       {children}

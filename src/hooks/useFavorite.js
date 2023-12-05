@@ -1,4 +1,3 @@
-// hooks/useFavorites.js
 import { useState } from "react";
 import { useProducts } from "./useProduct";
 

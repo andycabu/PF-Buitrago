@@ -19,7 +19,7 @@ export const ProductProvider = ({ children }) => {
   const updateToLocalStorage = (state) => {
     window.localStorage.setItem("favorites", JSON.stringify(state));
   };
-  const getProducts = async () => {
+  const getProducts = () => {
     const productsRef = ref(database, "/products");
     onValue(productsRef, (snapshot) => {
       const data = snapshot.val();

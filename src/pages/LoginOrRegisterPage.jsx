@@ -17,12 +17,9 @@ function LoginOrRegisterPage() {
 
   const navigate = useNavigate();
   const handleChange = (e) => {
-    // Obtén el nombre y el valor del elemento que cambió
     const name = e.target.name;
     const value = e.target.value;
 
-    // Actualiza el objeto de estado (newUser) utilizando el nombre como clave
-    // y el valor del elemento como valor
     setUser((prevUser) => ({
       ...prevUser,
       [name]: value,

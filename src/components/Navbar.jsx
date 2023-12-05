@@ -18,7 +18,7 @@ const Navbar = () => {
   const { cartCount } = useCart();
   const [favoriteCount, setFavoriteCount] = useState(0);
   const { toggleAside } = useAside();
-  const { user, handleSignOut, isAuthorized } = useUsers();
+  const { user, handleSignOut } = useUsers();
   const { t } = useTranslation();
   const displayName = user?.displayName;
   const [opacity, setOpacity] = useState(1);
@@ -38,11 +38,6 @@ const Navbar = () => {
       text: t("nav.contact"),
       link: "/contact",
     },
-    isAuthorized && {
-      id: 4,
-      text: t("nav.register_product"),
-      link: "/resgister-product",
-    },
   ];
   useEffect(() => {
     setFavoriteCount(favorites.length);
@@ -51,7 +46,7 @@ const Navbar = () => {
   useEffect(() => {
     const onScroll = () => {
       const scrollPosition = window.scrollY;
-      const newOpacity = scrollPosition > 10 ? 0 : 1; // Ajusta el 100 según tus necesidades
+      const newOpacity = scrollPosition > 10 ? 0 : 1;
 
       setOpacity(newOpacity);
     };

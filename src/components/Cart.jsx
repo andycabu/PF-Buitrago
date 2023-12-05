@@ -5,11 +5,15 @@ import { formatPrecio } from "../utilities/utilitys";
 import Aside from "./Aside";
 import ButtonsCart from "./ButtonsCart";
 import { useCart } from "../hooks/useCart";
+import { useUsers } from "../hooks/useUsers";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, clearCart, removeFromCart, totalPrice, cartCount } = useCart();
-
+  const { cart, clearCart, removeFromCart, totalPrice, cartCount, payCart } =
+    useCart();
+  const { user } = useUsers();
+  const navigate = useNavigate();
   const { integer, decimals } = formatPrecio(totalPrice);
 
   const { t } = useTranslation();
@@ -27,6 +31,7 @@ const Cart = () => {
               </span>
             </p>
             <Button
+              onClick={() => (user ? payCart(user, cart) : navigate("/login"))}
               background={"bg-[#FFD814] hover:bg-[#F7CA00]"}
               text={`Checkout (${cartCount} ${
                 cartCount > 1 ? "products" : "product"
