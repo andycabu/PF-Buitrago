@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 function LoginOrRegisterPage() {
   const { loginUser, signInWithGoogle, user, registerUser } = useUsers();
   const [newUser, setUser] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -41,6 +42,17 @@ function LoginOrRegisterPage() {
 
   const contentForm = [
     {
+      labelText: "nombre",
+      name: "name",
+      placeholder: "Displayname",
+      typeInput: "nickname",
+      onChange: handleChange,
+      autoComplete: "nickname",
+      textButton: route
+        ? t("login_or_register.login")
+        : t("login_or_register.register"),
+    },
+    {
       labelText: t("login_or_register.email"),
       name: "email",
       placeholder: "prueba@prueba.com",
@@ -60,6 +72,9 @@ function LoginOrRegisterPage() {
       autoComplete: "current-password",
     },
   ];
+  if (route) {
+    contentForm.shift();
+  }
   return (
     <div className="flex justify-center max-sm:p-4">
       <div className=" p-8 flex flex-col gap-4 bg-[var(--card-background-color)] rounded-md shadow-md  ">

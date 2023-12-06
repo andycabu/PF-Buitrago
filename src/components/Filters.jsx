@@ -2,6 +2,7 @@ import { useEffect, useId } from "react";
 import { useFilters } from "../hooks/useFilters";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Spinner from "./Spinner";
 
 const Filters = () => {
   const { pathname } = useLocation();
@@ -48,6 +49,7 @@ const Filters = () => {
   };
   const noProductsFound = isHomePage && filteredProducts.length === 0;
   const noFavoritesFound = isFavoritesPage && filteredFavorites.length === 0;
+
   return (
     <section>
       <div className="flex justify-around max-[590px]:flex-col max-[590px]:gap-4 items-center p-4">

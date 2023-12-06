@@ -21,7 +21,6 @@ const Navbar = () => {
   const { user, handleSignOut } = useUsers();
   const { t } = useTranslation();
   const displayName = user?.displayName;
-  const [opacity, setOpacity] = useState(1);
 
   const itemsNabar = [
     {
@@ -43,37 +42,17 @@ const Navbar = () => {
     setFavoriteCount(favorites.length);
   }, [favorites]);
 
-  useEffect(() => {
-    const onScroll = () => {
-      const scrollPosition = window.scrollY;
-      const newOpacity = scrollPosition > 10 ? 0 : 1;
-
-      setOpacity(newOpacity);
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <>
       <header className="relative">
-        <div
-          className={`${
-            opacity === 0 && "hidden"
-          } p-4 transition-all duration-500 ease-in-out flex justify-between max-md:hidden`}
-          style={{ opacity }}
-        >
-          <p>{t("nav.help")}</p>
-
-          <Language />
-        </div>
-
         <nav className="flex fixed z-[101] w-full max-w-[1500px] justify-between bg-[var(--card-background-color)] box-shadow-1">
-          <div className="max-md:hidden">
-            <DayNight position={"absolute"} />
+          <div className="max-md:hidden flex flex-col absolute gap-8 right-[13px] top-[5px]">
+            <DayNight />
           </div>
-          <div className="px-12 max-md:px-4 py-5 flex w-full items-center justify-between">
+          <div className="max-md:hidden flex flex-col absolute gap-8 -right-[26px] top-[62px]">
+            <Language />
+          </div>
+          <div className="px-12 max-md:px-4 py-6 flex w-full items-center justify-between">
             <Link className="text-3xl font-bold font-heading" to={"/"}>
               <img className="h-12 rounded-full" src={logo} alt="" />
             </Link>

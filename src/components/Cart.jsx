@@ -18,6 +18,11 @@ const Cart = () => {
 
   const { t } = useTranslation();
 
+  const buy = () => {
+    payCart(user, cart);
+    navigate("/order");
+  };
+
   return (
     <Aside id="aside2">
       {cart.length >= 1 && (
@@ -31,7 +36,7 @@ const Cart = () => {
               </span>
             </p>
             <Button
-              onClick={() => (user ? payCart(user, cart) : navigate("/login"))}
+              onClick={() => (user ? buy() : navigate("/login"))}
               background={"bg-[#FFD814] hover:bg-[#F7CA00]"}
               text={`Checkout (${cartCount} ${
                 cartCount > 1 ? "products" : "product"

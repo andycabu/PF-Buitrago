@@ -8,26 +8,27 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 export const UsersContext = createContext();
 
 export const UsersProvider = ({ children }) => {
   const [user, setUser] = useState();
-  const registerUser = async ({ email, password }) => {
-    console.log(email, password);
+  const registerUser = async ({ name, email, password }) => {
+    console.log(name, email, password);
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
-      // El usuario se ha registrado con éxito
-      // userCredential.user contendrá información sobre el usuario recién creado
-      console.log("Usuario registrado:", userCredential.user);
+      await updateProfile(userCredential.user, {
+        displayName: name,
+      });
+      setUser(userCredential.user);
     } catch (error) {
       console.error("Error al registrar el usuario:", error.message);
-      // Aquí puedes manejar los errores, como mostrar un mensaje al usuario
     }
   };
 

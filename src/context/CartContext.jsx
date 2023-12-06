@@ -102,12 +102,22 @@ export const CartProvider = ({ children }) => {
       quantity: item.quantity,
       title: item.title,
     }));
-
+    const simplifiedUser = {
+      uid: user.uid,
+      email: user.email,
+    };
     try {
-      const docRef = await addDoc(collection(db, "/orders"), simplifiedCart);
+      const createdAt = new Date();
+      const orderData = {
+        user: simplifiedUser,
+        order: simplifiedCart,
+        createdAt: createdAt,
+      };
+
+      const docRef = await addDoc(collection(db, "orders"), orderData);
       const orderId = docRef.id;
       clearCart();
-      setBuys({ orderId, cartDetails: cart });
+      setBuys({ orderId, simplifiedCart, createdAt });
     } catch (e) {
       console.error("Error al realizar la compra: ", e);
     }
