@@ -18,6 +18,7 @@ const OrderPage = () => {
   const totalPrice = products.reduce((accumulator, product) => {
     return accumulator + product.price * product.quantity;
   }, 0);
+  const { integer, decimals } = formatPrecio(totalPrice);
 
   const purchaseDate = buys?.createdAt;
   const formattedDate =
@@ -98,7 +99,11 @@ const OrderPage = () => {
             </tbody>
           </table>
           <p className="capitalize text-right pt-4">
-            total pedido: {totalPrice}€
+            total pedido:
+            <span className="font-bold">
+              {integer}
+              <sup>€{decimals}</sup>
+            </span>
           </p>
         </div>
       </div>
