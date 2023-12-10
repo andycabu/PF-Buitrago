@@ -16,6 +16,7 @@ import { UsersProvider } from "./context/UsersContext";
 import LoginOrRegisterPage from "./pages/LoginOrRegisterPage";
 import { Suspense } from "react";
 import OrderPage from "./pages/OrderPage";
+import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <Suspense fallback="Cargando traducciones">
@@ -37,7 +38,14 @@ function App() {
                           element={<ItemDetailContainer />}
                         />
                         <Route path="/category/:id" element={<Categories />} />
-                        <Route path="/order" element={<OrderPage />} />
+                        <Route
+                          path="/order"
+                          element={
+                            <ProtectedRoute>
+                              <OrderPage />
+                            </ProtectedRoute>
+                          }
+                        />
                         <Route
                           path="/register"
                           element={<LoginOrRegisterPage />}

@@ -16,6 +16,7 @@ export const CartProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
   const [tempQuantities, setTempQuantities] = useState({});
   const [buys, setBuys] = useState();
+  const [ok, setOk] = useState(false);
 
   function addToCart(product) {
     const productInCartIndex = cart.findIndex((item) => item.id === product.id);
@@ -116,6 +117,7 @@ export const CartProvider = ({ children }) => {
 
       const docRef = await addDoc(collection(db, "orders"), orderData);
       const orderId = docRef.id;
+
       clearCart();
       setBuys({ orderId, simplifiedCart, createdAt });
     } catch (e) {
@@ -151,6 +153,7 @@ export const CartProvider = ({ children }) => {
         totalPrice,
         cartCount,
         buys,
+        ok,
         addToCart,
         removeFromCart,
         checkProductInCart,
@@ -158,6 +161,7 @@ export const CartProvider = ({ children }) => {
         updateProductQuantity,
         getQuantity,
         payCart,
+        setOk,
       }}
     >
       {children}

@@ -10,8 +10,15 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, clearCart, removeFromCart, totalPrice, cartCount, payCart } =
-    useCart();
+  const {
+    cart,
+    clearCart,
+    removeFromCart,
+    totalPrice,
+    cartCount,
+    payCart,
+    setOk,
+  } = useCart();
   const { user } = useUsers();
   const navigate = useNavigate();
   const { integer, decimals } = formatPrecio(totalPrice);
@@ -19,6 +26,7 @@ const Cart = () => {
   const { t } = useTranslation();
 
   const buy = () => {
+    setOk(true);
     payCart(user, cart);
     navigate("/order");
   };
